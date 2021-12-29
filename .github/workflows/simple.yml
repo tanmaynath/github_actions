@@ -12,3 +12,8 @@ jobs:
         run: |
           node -v
           npm -v
+      - name: python stuff
+        run: |
+          import os
+          print(os.name)
+        shell: python
