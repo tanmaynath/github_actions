@@ -8,6 +8,7 @@ jobs:
     permissions:
       issues: write
       actions: write
+      contents: write
     steps:
       - name: Push random file
         run: |
