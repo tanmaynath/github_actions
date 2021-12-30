@@ -1,0 +1,17 @@
+name: Actions Workflow
+
+on:
+  repository_dispatch:
+    types: [build]
+  schedule:
+    - cron: "0/5 * * * *"
+  # push:
+  pull_request:
+    types: [open, closed, reopened]
+
+jobs:
+  run-repo-dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: payload
+        run: echo ${{ github.event.payload_client.env }}
